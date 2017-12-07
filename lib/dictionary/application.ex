@@ -10,7 +10,9 @@ defmodule Dictionary.Application do
 
     options = [
       name: Dictionary.Supervisor,
-      strategy: :one_for_one
+      strategy: :one_for_one,
+      max_restarts: 3,
+      max_seconds: 6
     ]
 
     Supervisor.start_link(children, options)
